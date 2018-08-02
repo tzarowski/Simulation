@@ -9,6 +9,7 @@ public class TargetScript : MonoBehaviour {
     private float randX;
     private float randZ;
     public float speed = 10;
+    public GameObject explosionPrefab;
     // Use this for initialization
     void Start()
     {
@@ -34,6 +35,15 @@ public class TargetScript : MonoBehaviour {
         this.transform.Translate(Vector3.up * randY * Time.deltaTime * speed, Space.World);
         this.transform.Translate(Vector3.right * randX * Time.deltaTime * speed, Space.World);
         this.transform.Translate(Vector3.forward * randZ * Time.deltaTime * speed, Space.World);
+    }
+
+    void OnCollisionEnter (Collision collision)
+    {
+        if(collision.transform.tag == "Bullet")
+        {
+            Instantiate(explosionPrefab, collision.transform);
+            Destroy(gameObject);
+        }
     }
 
 }

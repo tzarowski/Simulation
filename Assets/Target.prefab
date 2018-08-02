@@ -97,8 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomDirection: {x: 0, y: 0, z: 0}
-  randomTime: 1
-  speed: 10
+  randomTime: 10
+  speed: 1
+  explosionPrefab: {fileID: 1498114789209676, guid: 222c62b78ae7e1140b55b086923dc4a2,
+    type: 2}
 --- !u!135 &135568279231232214
 SphereCollider:
   m_ObjectHideFlags: 1

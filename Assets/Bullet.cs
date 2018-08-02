@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
-
+    /*
     void OnCollisionEnter (Collision collision)
     {
         if(collision.transform.tag == "TriggerExplosion")
@@ -32,4 +32,5 @@ public class Bullet : MonoBehaviour {
 
         }
     }
+    */
 }
