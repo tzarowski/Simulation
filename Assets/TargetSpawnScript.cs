@@ -18,7 +18,9 @@ public class TargetSpawnScript : MonoBehaviour {
 
         if(activeTargets.Length < 5)
         {
-            Instantiate(target);
+            Vector3 spawnPosition = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-20f, 5f));
+
+            Instantiate(target, spawnPosition, Quaternion.identity);
         }
         
 	}

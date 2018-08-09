@@ -10,10 +10,10 @@ public class TargetScript : MonoBehaviour {
     private float randZ;
     public float speed = 10;
     public GameObject explosionPrefab;
+
     // Use this for initialization
     void Start()
     {
-        this.transform.position = new Vector3 (0, 3, 0);
         randY = Random.Range(-1f, 1f);
         randX = Random.Range(-1f, 1f);
         randZ = Random.Range(-1f, 1f);
@@ -42,7 +42,9 @@ public class TargetScript : MonoBehaviour {
         if(collision.transform.tag == "Bullet")
         {
             Instantiate(explosionPrefab, collision.transform);
+            ScoreManagerScript.score += 1;
             Destroy(gameObject);
+            
         }
     }
 
